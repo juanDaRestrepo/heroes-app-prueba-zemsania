@@ -1,2 +1,11 @@
 <h1>Listado de Cards</h1>
-<app-card></app-card>
+<div class="container">
+    <div class="row" >
+            <app-card
+                class="col-md-4 mb-4"
+                *ngFor="let hero of heroes"
+                [hero]="hero">
+            </app-card>
+    </div>
+    
+</div>
