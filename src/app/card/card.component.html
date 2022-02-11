@@ -2,19 +2,28 @@
  <div class="card mb-3" >
   <div class="row g-0">
       <div class="col-md-5">
-                <img src="assets/heroes/{{hero.id}}.jpg" class="card-img-top" alt="..." />
+            <img src="assets/heroes/{{heroOne?heroOne[0].id:hero.id}}.jpg" class="card-img-top" alt="..." />
       </div>
       <div class="col-md-7">
           <div class="card-body">
-              <h5 class="card-title">{{hero.superhero}}</h5>
-              <p class="card-text">{{hero.alter_ego}}</p>
+              <h5 class="card-title">{{heroOne?heroOne[0].superhero:hero.superhero}}</h5>
+              <p class="card-text">{{heroOne?heroOne[0].superhero:hero.superhero}}</p>
                     
               <p class='card-text'>
-                  <small class='text-muted'>{{hero.first_appearance }}</small>
+                  <small class='text-muted'>{{heroOne?heroOne[0].first_appearance:hero.first_appearance }}</small>
               </p>
-              <a href="#" class="btn btn-primary">
-                  Mas...
-              </a>
+              <div *ngIf="heroOne;else other_content">
+                <a  class="btn btn-primary" (click)="goToHero(heroOne[0].id)">
+                    Mas...
+                </a>
+              </div>
+
+              <ng-template #other_content>
+                <a class="btn btn-primary" (click)="goToHero(hero.id)">
+                    Mas...
+                </a>
+              </ng-template>
+              
           </div>
       </div>
   </div>

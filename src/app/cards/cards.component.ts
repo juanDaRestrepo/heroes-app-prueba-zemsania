@@ -1,9 +1,14 @@
 import {Component} from "@angular/core";
-import { heroes } from "./heroes.model";
+import { HeroesService } from "../HeroesService.service";
+
 @Component({
     selector: 'app-cards',
-    templateUrl: './cards.component.html'
+    templateUrl: './cards.component.html',
+    providers: [HeroesService]
 })
 export class CardsComponent{
-    heroes = heroes;
+    constructor(private heroesService:HeroesService){
+
+    }
+    heroes = this.heroesService.returnAllHeroes();
 }
