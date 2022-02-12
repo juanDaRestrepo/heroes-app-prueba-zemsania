@@ -1,1 +1,30 @@
-<p>hero-view works!</p>
+
+  <div class='row mt-5 ms-3'>
+  
+      <div class="col-4">
+        <img
+          src="assets/heroes/{{heroToShow.id}}.jpg"
+          alt={{heroToShow.id}}
+          class='img-thumbnail animate__animated animate__fadeInLeft'
+        />
+      </div>
+      <div class='col-6'>
+          <h3>{{ heroToShow.superhero }}</h3>
+          <ul class='list-group'>
+            <li class='list-group-item'><b>Alter ego:</b> {{ heroToShow.alter_ego}}</li>
+            <li class='list-group-item'><b>Publisher:</b> {{ heroToShow.publisher}}</li>
+            <li class='list-group-item'><b>First Appearance</b> {{ heroToShow.first_appearance}}</li>
+          </ul>
+  
+          <h5 class='mt-3'>Characters</h5>
+          <p>{{ heroToShow.characters }}</p>
+  
+          <button
+            class='btn btn-outline-info'
+            (click)="handleReturn()"
+          >
+            Regresar
+          </button>
+      </div>
+  </div>
+

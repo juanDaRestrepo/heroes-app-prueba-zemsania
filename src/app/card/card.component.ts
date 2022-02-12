@@ -10,7 +10,7 @@ export class CardComponent implements OnInit {
  
   @Input() hero:any;
   @Input() heroOne:any;
- 
+  @Input() i:number;
 
   constructor  (private router:Router) { }
 
@@ -18,7 +18,7 @@ export class CardComponent implements OnInit {
       
   }
 
-  goToHero(id:string){
+  goToHero(id:number){
     this.router.navigate([`heroview/${id}`])
   }
 }

@@ -8,7 +8,8 @@ import { AppComponent } from './app.component';
 import { CardsComponent } from './cards/cards.component';
 import { CardComponent } from './card/card.component';
 import { CarrouselComponent } from './carrousel/carrousel.component';
-import { HeroViewComponent } from './hero-view/hero-view.component'
+import { HeroViewComponent } from './hero-view/hero-view.component';
+import { NavbarComponent } from './navbar/navbar.component'
 
 const routes: Routes = [
   {path: '', component: CardsComponent},
@@ -18,7 +19,7 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent,CardsComponent, CardComponent, CarrouselComponent, HeroViewComponent
+    AppComponent,CardsComponent, CardComponent, CarrouselComponent, HeroViewComponent, NavbarComponent
   ],
   imports: [
     BrowserModule,
