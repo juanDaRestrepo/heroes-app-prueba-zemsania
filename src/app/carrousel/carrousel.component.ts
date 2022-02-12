@@ -7,6 +7,8 @@ import { HeroesService } from "../HeroesService.service";
   providers:[HeroesService]
 })
 export class CarrouselComponent implements OnInit, OnDestroy {
+
+  /* This variable is important because it tells the card component how to send the parameter to the goToHero method  */
   carrouselOn:boolean= false;
   constructor(private heroesService:HeroesService){
 
@@ -14,7 +16,9 @@ export class CarrouselComponent implements OnInit, OnDestroy {
   heroOne = this.heroesService.returnFirstHero();
   restOfHeroes =this.heroesService.returnAllHeroesWithoutfirstHero();
 
-
+/* Lyfecycle to tell the card component if it is rendering the cards in the carrousel componenent to work with the object diferently 
+  in the card component and view
+*/
   ngOnInit(): void {
     this.carrouselOn = true;
     console.log(this.carrouselOn);
@@ -23,5 +27,6 @@ export class CarrouselComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
       this.carrouselOn = false;
   }
+  /* --------------------------------------------------------------------------------------------------------------------------------- */
 
 }

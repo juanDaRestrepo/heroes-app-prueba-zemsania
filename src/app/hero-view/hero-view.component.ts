@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HeroesService } from '../HeroesService.service';
 import { Location } from '@angular/common';
@@ -8,15 +8,14 @@ import { Location } from '@angular/common';
   templateUrl: './hero-view.component.html',
   providers: [HeroesService]
 })
-export class HeroViewComponent implements OnInit{
+export class HeroViewComponent {
  
   constructor(private heroesService: HeroesService, private route:ActivatedRoute,private router:Router, private location: Location) { }
 
+  /* Here is used a service to load an especic hero to show it in the view of this component */
   heroToShow=this.heroesService.returnSelectedHero(this.route.snapshot.params['id']);
 
-  ngOnInit(): void {
-    console.log(this.heroToShow);
-  }
+  
  
   handleReturn(){
     this.location.back()

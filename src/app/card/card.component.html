@@ -1,4 +1,6 @@
-
+<!-- ALL THE TERNARY CONDITIONALS USED IN THIS VIEW IS FOR SOLVING THE PROBLEM THAT ACTIVE BOOTSTRAP CARROUSEL CLASS GAVE TO RENDER CORRECTLY
+    CARD COMPONENT
+-->
  <div class="card mb-3" >
   <div class="row g-0">
       <div class="col-sm-5">
@@ -12,6 +14,9 @@
               <p class='card-text'>
                   <small class='text-muted'>{{heroOne?heroOne[0].first_appearance:hero.first_appearance }}</small>
               </p>
+              <!-- directive used to send the correct id to the heroView component depending on the component(carrousel or cards)
+                    that is sending the info
+                -->
               <div *ngIf="heroOne;else other_content">
                 <a  class="btn btn-primary" (click)="goToHero(0)">
                     Mas...
@@ -19,7 +24,7 @@
               </div>
 
               <ng-template #other_content>
-                  
+                
                 <a class="btn btn-primary" (click)="goToHero(carrouselOn?i+1:i)">
                     Mas...
                 </a>

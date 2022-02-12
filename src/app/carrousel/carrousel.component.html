@@ -5,12 +5,14 @@
     <div class="col-12 col-sm-8">
       <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
+          <!-- Send of the first hero of the object for the correct functionallity of the bootstrap carrousel componente -->
           <app-card
             class=" carousel-item active"
             [heroOne]="heroOne"
            
           >
           </app-card>
+          <!-- Send of the rest of the heros to be render in the component-->
           <app-card
             class=" carousel-item "
             *ngFor="let hero of restOfHeroes; let i=index"

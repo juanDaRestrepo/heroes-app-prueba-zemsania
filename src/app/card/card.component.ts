@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class CardComponent implements OnInit {
  
+  /* data receive from cards an carrousel component to render them correctly in the view */
   @Input() hero:any;
   @Input() heroOne:any;
   @Input() i:number;
@@ -18,7 +19,7 @@ export class CardComponent implements OnInit {
   ngOnInit(): void {
       
   }
-
+  /* method that takes the user to the hero view component depending on the position of in the array  implemented in the hero service*/
   goToHero(id:number){
     this.router.navigate([`heroview/${id}`])
   }
