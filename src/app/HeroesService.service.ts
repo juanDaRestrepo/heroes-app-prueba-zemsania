@@ -1,4 +1,4 @@
-import { pipe } from "rxjs"
+/* This  */
 
 export class HeroesService{
     returnAllHeroes(){
