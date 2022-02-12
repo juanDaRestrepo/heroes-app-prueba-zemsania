@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HeroesService } from '../HeroesService.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-hero-view',
@@ -9,7 +10,7 @@ import { HeroesService } from '../HeroesService.service';
 })
 export class HeroViewComponent implements OnInit{
  
-  constructor(private heroesService: HeroesService, private route:ActivatedRoute,private router:Router) { }
+  constructor(private heroesService: HeroesService, private route:ActivatedRoute,private router:Router, private location: Location) { }
 
   heroToShow=this.heroesService.returnSelectedHero(this.route.snapshot.params['id']);
 
@@ -18,7 +19,7 @@ export class HeroViewComponent implements OnInit{
   }
  
   handleReturn(){
-    this.router.navigate([""])
+    this.location.back()
   }
 
 }

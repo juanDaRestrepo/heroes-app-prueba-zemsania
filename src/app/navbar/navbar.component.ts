@@ -23,4 +23,5 @@ export class NavbarComponent implements OnInit {
   goToCarrousel(){
     this.router.navigate(["carrousel"])
   }
+  
 }
