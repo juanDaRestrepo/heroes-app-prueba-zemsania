@@ -1,5 +1,5 @@
 {
-  "name": "heroes-app",
+  "name": "org.apache.cordova.newapp",
   "displayName": "HelloCordova",
   "version": "1.0.0",
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
