@@ -13,8 +13,10 @@
           </app-card>
           <app-card
             class=" carousel-item "
-            *ngFor="let hero of restOfHeroes"
-            [hero]="hero"     
+            *ngFor="let hero of restOfHeroes; let i=index"
+            [hero]="hero"
+            [i]="i"
+            [carrouselOn]="carrouselOn"     
           >
           </app-card>
       

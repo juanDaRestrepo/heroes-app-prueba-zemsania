@@ -11,7 +11,8 @@ export class CardComponent implements OnInit {
   @Input() hero:any;
   @Input() heroOne:any;
   @Input() i:number;
-
+  @Input() carrouselOn:boolean;
+  
   constructor  (private router:Router) { }
 
   ngOnInit(): void {

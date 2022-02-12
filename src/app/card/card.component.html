@@ -2,7 +2,7 @@
  <div class="card mb-3" >
   <div class="row g-0">
       <div class="col-sm-5">
-            <img src="assets/heroes/{{heroOne?heroOne[0].id:hero.id}}.jpg" class="card-img-top" alt="..." />
+            <img src="assets/heroes/{{heroOne?heroOne[0].id:hero.id}}.jpg" class="card-img-top" alt="{{heroOne?heroOne[0].id:hero.id}}" />
       </div>
       <div class="col-sm-7">
           <div class="card-body">
@@ -13,14 +13,14 @@
                   <small class='text-muted'>{{heroOne?heroOne[0].first_appearance:hero.first_appearance }}</small>
               </p>
               <div *ngIf="heroOne;else other_content">
-                <a  class="btn btn-primary" (click)="goToHero(heroOne[0].id)">
+                <a  class="btn btn-primary" (click)="goToHero(0)">
                     Mas...
                 </a>
               </div>
 
               <ng-template #other_content>
                   
-                <a class="btn btn-primary" (click)="goToHero(i)">
+                <a class="btn btn-primary" (click)="goToHero(carrouselOn?i+1:i)">
                     Mas...
                 </a>
               </ng-template>

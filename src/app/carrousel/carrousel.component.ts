@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HeroesService } from "../HeroesService.service";
 
 @Component({
@@ -6,8 +6,8 @@ import { HeroesService } from "../HeroesService.service";
   templateUrl: './carrousel.component.html',
   providers:[HeroesService]
 })
-export class CarrouselComponent implements OnInit {
-
+export class CarrouselComponent implements OnInit, OnDestroy {
+  carrouselOn:boolean= false;
   constructor(private heroesService:HeroesService){
 
   }
@@ -16,7 +16,12 @@ export class CarrouselComponent implements OnInit {
 
 
   ngOnInit(): void {
-    console.log(this.heroOne);
+    this.carrouselOn = true;
+    console.log(this.carrouselOn);
+  }
+
+  ngOnDestroy(): void {
+      this.carrouselOn = false;
   }
 
 }
